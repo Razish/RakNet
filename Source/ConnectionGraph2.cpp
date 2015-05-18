@@ -49,7 +49,9 @@ bool ConnectionGraph2::GetConnectionListForRemoteSystem(RakNetGUID remoteSystemG
 {
 	if ((saOut==0 && guidOut==0) || outLength==0 || *outLength==0 || remoteSystemGuid==UNASSIGNED_RAKNET_GUID)
 	{
-		*outLength=0;
+		if ( outLength ) {
+			*outLength=0;
+		}
 		return false;
 	}
 
